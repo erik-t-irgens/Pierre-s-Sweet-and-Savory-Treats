@@ -1,6 +1,6 @@
 # Pierre's Sweet and Savory Treats
 
-#### _Admin tool to add flavors, and treats for the hair salon - August 11, 2019_
+#### _Admin tool to add flavors, and treats for Pierre's shop - August 16, 2019_
 
 #### _By **Erik Irgens**_
 

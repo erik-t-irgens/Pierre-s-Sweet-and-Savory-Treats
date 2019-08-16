@@ -3,8 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using PierresSweets.Models;
 using System.Threading.Tasks;
 using PierresSweets.ViewModels;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace PierresSweets.Controllers
 {

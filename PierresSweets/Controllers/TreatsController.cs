@@ -3,11 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
-using System;
 using System.Linq;
-using System.Collections.Generic;
 using PierresSweets.Models;
-using PierresSweets.ViewModels;
 using System.Threading.Tasks;
 using System.Security.Claims;
 

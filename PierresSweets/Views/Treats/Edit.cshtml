@@ -12,16 +12,16 @@
     {
         @Html.HiddenFor(model => model.TreatId)
 
-    @Html.LabelFor(model => model.Name)
-        @Html.TextBoxFor(model => model.Name)<br>
+    @Html.LabelFor(model => model.Name)<br>
+        @Html.TextBoxFor(model => model.Name)<hr>
 
-        @Html.LabelFor(model => model.Description)
-        @Html.TextBoxFor(model => model.Description)<br>
+        @Html.LabelFor(model => model.Description)<br>
+        @Html.TextBoxFor(model => model.Description)<hr>
 
-        @Html.LabelFor(model => model.Ingredients)
-        @Html.TextBoxFor(model => model.Ingredients)<br>
+        @Html.LabelFor(model => model.Ingredients)<br>
+        @Html.TextBoxFor(model => model.Ingredients)<hr>
 
-        @Html.LabelFor(model => model.Rating)
+        @Html.LabelFor(model => model.Rating)<br>
         <!-- might need id of rating? -->
         <select  name="Rating">
             <!-- need name=rating? -->
@@ -36,12 +36,12 @@
                 <option value="4">&#127775; &#127775; &#127775; &#127775; </option> 
                 <!-- 5 star-->
                 <option value="5">&#127775; &#127775; &#127775; &#127775; &#127775;</option> 
-        </select><br>
+        </select><hr>
 
         
 
-        @Html.Label("Select flavor")
-        @Html.DropDownList("FlavorId")<br>
+        @Html.Label("Select flavor")<br>
+        @Html.DropDownList("FlavorId")<hr>
 
         <input class="btn btn-outline-success" type="submit" value="Save" />
     }

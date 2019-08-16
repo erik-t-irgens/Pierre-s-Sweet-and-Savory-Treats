@@ -4,6 +4,10 @@ body {
     color: white !important;
 }
 
+.cardstyle {
+    min-height: 500px;
+}
+
 .card-header {
     color: lightsalmon !important;
     font-family: 'Monoton', cursive;

@@ -11,18 +11,18 @@
     @using (Html.BeginForm())
     {
    
-            @Html.LabelFor(model => model.Name)
-            <input data-val="true" data-val-length="The field Name must be a string with a maximum length of 200." data-val-length-max="200" maxlength="200" required id="Name" name="Name" type="text" value=""><br>
+            @Html.LabelFor(model => model.Name)<br>
+            <input data-val="true" data-val-length="The field Name must be a string with a maximum length of 200." data-val-length-max="200" maxlength="200" required id="Name" name="Name" type="text" value=""><hr>
    
-            @Html.LabelFor(model => model.Description)
-            <input data-val="true" data-val-length="The field Description must be a string with a maximum length of 200." data-val-length-max="200" id="Description" name="Description" type="text" maxlength="200" required value=""><br>
+            @Html.LabelFor(model => model.Description)<br>
+            <input data-val="true" data-val-length="The field Description must be a string with a maximum length of 200." data-val-length-max="200" id="Description" name="Description" type="text" maxlength="200" required value=""><hr>
 
      
-            @Html.LabelFor(model => model.Ingredients)
-            <input data-val="true" data-val-length="The field Ingredients must be a string with a maximum length of 60000." data-val-length-max="60000" id="Ingredients" name="Ingredients" type="text" value="" maxlength="60000"><br>
+            @Html.LabelFor(model => model.Ingredients)<br>
+            <input data-val="true" data-val-length="The field Ingredients must be a string with a maximum length of 60000." data-val-length-max="60000" id="Ingredients" name="Ingredients" type="text" value="" maxlength="60000"><hr>
 
 
-            @Html.LabelFor(model => model.Rating)
+            @Html.LabelFor(model => model.Rating)<br>
             <!-- might need id of rating? -->
             <select  name="Rating">
                 <!-- need name=rating? -->
@@ -37,11 +37,11 @@
                     <option value="4">&#127775; &#127775; &#127775; &#127775; </option> 
                     <!-- 5 star-->
                     <option value="5">&#127775; &#127775; &#127775; &#127775; &#127775;</option> 
-            </select><br>
+            </select><hr>
 
 
-            @Html.Label("Select flavor")
-            @Html.DropDownList("FlavorId")<br>
+            @Html.Label("Select flavor")<br>
+            @Html.DropDownList("FlavorId")<hr>
 
         <input type="submit" value="Add new treat" class="btn btn-outline-success"/>
     }

@@ -10,11 +10,11 @@
     @using (Html.BeginForm())
     {
 
-        @Html.LabelFor(model => model.Name)
-            <input data-val="true" data-val-length="The field Name must be a string with a maximum length of 200." data-val-length-max="200" maxlength="200" required id="Name" name="Name" type="text" value=""><br>
+        @Html.LabelFor(model => model.Name)<br>
+            <input data-val="true" data-val-length="The field Name must be a string with a maximum length of 200." data-val-length-max="200" maxlength="200" required id="Name" name="Name" type="text" value=""><hr>
 
-        @Html.LabelFor(model => model.Description)
-            <input data-val="true" data-val-length="The field Description must be a string with a maximum length of 200." data-val-length-max="200" id="Description" name="Description" type="text" maxlength="200" required value=""><br>
+        @Html.LabelFor(model => model.Description)<br>
+            <input data-val="true" data-val-length="The field Description must be a string with a maximum length of 200." data-val-length-max="200" id="Description" name="Description" type="text" maxlength="200" required value=""><hr>
 
         <input type="submit" value="Add new flavor" class="btn btn-outline-success"/>
         

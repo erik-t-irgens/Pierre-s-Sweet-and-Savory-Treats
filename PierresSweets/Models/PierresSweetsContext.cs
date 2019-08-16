@@ -7,7 +7,7 @@ namespace PierresSweets.Models
     {
         public virtual DbSet<Flavor> Flavors { get; set; }
         public virtual DbSet<Treat> Treats { get; set; }
-        public virtual DbSet<FlavorTreat> FalvorTreat { get; set; }
+        public virtual DbSet<FlavorTreat> FlavorTreat { get; set; }
 
         public PierresSweetsContext(DbContextOptions options) : base(options) { }
     }

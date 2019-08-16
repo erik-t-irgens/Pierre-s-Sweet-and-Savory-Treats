@@ -14,12 +14,12 @@
 @if (Model.Any())
 {
     <div class="card-body">
-        <ul>
+        
         @foreach (Treat treat in Model)
         {
-            <li>@Html.ActionLink($"{treat.Name}", "Details", new { id = treat.TreatId})</li>
+            <p class="alert alert-info treatListed">@Html.ActionLink($"{treat.Name}", "Details", new { id = treat.TreatId})</p class="alert alert-info">
         }
-        </ul>
+        
     </div>
 } 
 else
@@ -30,6 +30,6 @@ else
 }
 
 <div class="card-footer">
-<p>@Html.ActionLink("Add new Treat", "Create")</p>
+<a class="btn btn-outline-success" href="Treats/Create">Add Treat</a> 
 <a class="btn btn-outline-info" href="/">Home</a>  
 </div>

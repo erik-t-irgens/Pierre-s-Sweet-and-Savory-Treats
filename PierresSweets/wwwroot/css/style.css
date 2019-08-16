@@ -1,12 +1,22 @@
 
 body {
-    text-align: center;
-    color: white;
+    text-align: center !important;
+    color: white !important;
 }
 
 .card-header {
     color: lightsalmon !important;
+    font-family: 'Monoton', cursive;
+    text-shadow: 1px 1px black;
+}
 
+.card-body, .card-footer {
+    font-family: 'Staatliches', cursive;
+}
+
+.treatListed, .flavorListed {
+    color: lightseagreen;
+    font-size: 30px;
 }
 
 .btn {

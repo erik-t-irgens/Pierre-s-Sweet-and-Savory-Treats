@@ -10,40 +10,43 @@
 <div class="card-body">
     @using (Html.BeginForm())
     {
-        @Html.LabelFor(model => model.Name)
-        @Html.TextBoxFor(model => model.Name)
+   
+            @Html.LabelFor(model => model.Name)
+            <input data-val="true" data-val-length="The field Name must be a string with a maximum length of 200." data-val-length-max="200" maxlength="200" required id="Name" name="Name" type="text" value=""><br>
+   
+            @Html.LabelFor(model => model.Description)
+            <input data-val="true" data-val-length="The field Description must be a string with a maximum length of 200." data-val-length-max="200" id="Description" name="Description" type="text" maxlength="200" required value=""><br>
 
-        @Html.LabelFor(model => model.Description)
-        @Html.TextBoxFor(model => model.Description)
+     
+            @Html.LabelFor(model => model.Ingredients)
+            <input data-val="true" data-val-length="The field Ingredients must be a string with a maximum length of 60000." data-val-length-max="60000" id="Ingredients" name="Ingredients" type="text" value="" maxlength="60000"><br>
 
-        @Html.LabelFor(model => model.Ingredients)
-        @Html.TextBoxFor(model => model.Ingredients)
 
-        @Html.LabelFor(model => model.Rating)
-        <!-- might need id of rating? -->
-        <select  name="Rating">
-            <!-- need name=rating? -->
-                <option>Select Rating</option> 
-                <!-- 1 star -->
-                <option value="1">&#127775;</option> 
-                <!-- 2 star -->
-                <option value="2">&#127775; &#127775; </option> 
-                <!-- 3 star-->
-                <option value="3">&#127775; &#127775; &#127775; </option> 
-                <!-- 4 star -->
-                <option value="4">&#127775; &#127775; &#127775; &#127775; </option> 
-                <!-- 5 star-->
-                <option value="5">&#127775; &#127775; &#127775; &#127775; &#127775;</option> 
-        </select>
+            @Html.LabelFor(model => model.Rating)
+            <!-- might need id of rating? -->
+            <select  name="Rating">
+                <!-- need name=rating? -->
+                    <option>Select Rating</option> 
+                    <!-- 1 star -->
+                    <option value="1">&#127775;</option> 
+                    <!-- 2 star -->
+                    <option value="2">&#127775; &#127775; </option> 
+                    <!-- 3 star-->
+                    <option value="3">&#127775; &#127775; &#127775; </option> 
+                    <!-- 4 star -->
+                    <option value="4">&#127775; &#127775; &#127775; &#127775; </option> 
+                    <!-- 5 star-->
+                    <option value="5">&#127775; &#127775; &#127775; &#127775; &#127775;</option> 
+            </select><br>
 
-        
 
-        @Html.Label("Select flavor")
-        @Html.DropDownList("FlavorId")
-        <input type="submit" value="Add new treat" class="btn btn-default"/>
+            @Html.Label("Select flavor")
+            @Html.DropDownList("FlavorId")<br>
+
+        <input type="submit" value="Add new treat" class="btn btn-outline-success"/>
     }
 </div>
 <div class="card-footer">
-    <p>@Html.ActionLink("Show all treats", "Index")</p>    
+    <a class="btn btn-outline-success" href="/Treats">Show all Treats</a>     
     <a class="btn btn-outline-info" href="/">Home</a>                                            
 </div>

@@ -4,23 +4,23 @@
 
 @model PierresSweets.Models.Flavor
 <div class="card-header">
-    <h4>Add a new flavor!!</h4>
+    <h4>Add a new flavor</h4>
 </div>
  <div class="card-body">
     @using (Html.BeginForm())
     {
 
         @Html.LabelFor(model => model.Name)
-        @Html.TextBoxFor(model => model.Name)
+            <input data-val="true" data-val-length="The field Name must be a string with a maximum length of 200." data-val-length-max="200" maxlength="200" required id="Name" name="Name" type="text" value=""><br>
 
         @Html.LabelFor(model => model.Description)
-        @Html.TextBoxFor(model => model.Description)
+            <input data-val="true" data-val-length="The field Description must be a string with a maximum length of 200." data-val-length-max="200" id="Description" name="Description" type="text" maxlength="200" required value=""><br>
 
         <input type="submit" value="Add new flavor" class="btn btn-outline-success"/>
         
     }
 </div>
 <div class="card-footer">
-    <p>@Html.ActionLink("Show all flavors", "Index")</p>    
+    <a class="btn btn-outline-warning" href="/Flavors">Show all Flavors</a>      
     <a class="btn btn-outline-info" href="/">Home</a>                                            
 </div>

@@ -13,13 +13,13 @@
         @Html.HiddenFor(model => model.TreatId)
 
     @Html.LabelFor(model => model.Name)
-        @Html.TextBoxFor(model => model.Name)
+        @Html.TextBoxFor(model => model.Name)<br>
 
         @Html.LabelFor(model => model.Description)
-        @Html.TextBoxFor(model => model.Description)
+        @Html.TextBoxFor(model => model.Description)<br>
 
         @Html.LabelFor(model => model.Ingredients)
-        @Html.TextBoxFor(model => model.Ingredients)
+        @Html.TextBoxFor(model => model.Ingredients)<br>
 
         @Html.LabelFor(model => model.Rating)
         <!-- might need id of rating? -->
@@ -36,17 +36,18 @@
                 <option value="4">&#127775; &#127775; &#127775; &#127775; </option> 
                 <!-- 5 star-->
                 <option value="5">&#127775; &#127775; &#127775; &#127775; &#127775;</option> 
-        </select>
+        </select><br>
 
         
 
         @Html.Label("Select flavor")
-        @Html.DropDownList("FlavorId")
+        @Html.DropDownList("FlavorId")<br>
 
-        <input type="submit" value="Save" />
+        <input class="btn btn-outline-success" type="submit" value="Save" />
     }
 </div>
 <div class="card-footer">
-    @Html.ActionLink("Back to List", "Index")
+   
     <a class="btn btn-outline-info" href="/">Home</a>  
+     <a class="btn btn-outline-secondary" href="/Treats">Back to Treats</a> 
 </div>

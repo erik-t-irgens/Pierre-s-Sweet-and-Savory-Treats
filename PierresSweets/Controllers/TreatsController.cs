@@ -38,7 +38,7 @@ namespace PierresSweets.Controllers
         public ActionResult Create()
         {
             // Selectlist type - need DataList? Is it a thing?
-            ViewBag.FlavorId = new SelectList(_db.Flavors, "FlavorId");
+            ViewBag.FlavorId = new SelectList(_db.Flavors, "FlavorId", "Name");
             return View();
         }
 

@@ -12,23 +12,26 @@
     <p>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</p>
 
     <h4>Flavors: </h4>
-    <ul>
+    <hr/>
+  
     @foreach (var join in Model.Flavors)
     {
-        <li>@join.Flavor.Name</li>
+        
 
         @using (Html.BeginForm("DeleteFlavor", "Treats"))
         {
+            <h5>@join.Flavor.Name</h5>
             @Html.Hidden("joinId", @join.FlavorTreatId)
-            <input type="submit" value="Delete"/>
+            <input class="btn btn-danger btn-sm" type="submit" value="Delete"/>
+            <hr/>
         }
 
     }
-    </ul>
+    
 </div>
 <div class="card-footer">
-<p>@Html.ActionLink("Back to list", "Index")</p>
 <p>@Html.ActionLink("Edit Treat", "Edit", new { id = Model.TreatId })</p>
 <p>@Html.ActionLink("Delete Treat", "Delete", new { id = Model.TreatId })</p>
-<a class="btn btn-outline-info" href="/">Home</a>  
+<a class="btn btn-outline-info" href="/">Home</a>
+<a class="btn btn-outline-secondary" href="/Treats">Back</a>   
 </div>

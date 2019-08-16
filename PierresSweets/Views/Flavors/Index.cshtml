@@ -16,7 +16,7 @@
         <ul>
         @foreach (Flavor flavor in Model)
         {
-            <li>@Html.ActionLink($"{flavor.Name}", "Details", new { id = flavor.FlavorId})</li>
+            <p class="alert alert-info flavorListed">@Html.ActionLink($"{flavor.Name}", "Details", new { id = flavor.FlavorId})</p class="alert alert-info">
         }
         </ul>
     </div>
@@ -28,6 +28,6 @@ else
     </div>
 }
 <div class="card-footer">
-    <p>@Html.ActionLink("Add new Flavor", "Create")</p>
+    <a class="btn btn-outline-warning" href="/Flavors/Create">Add new Flavor</a>
     <a class="btn btn-outline-info" href="/">Home</a>  
 </div>

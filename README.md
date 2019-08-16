@@ -13,9 +13,12 @@ This app is intended to serve as a utlity for Pierre's Sweet and Savory Treats t
 ### Specs
 | Spec | Input | Output |
 | :-------------     | :------------- | :------------- |
+| **App allows for User Account Creation** | Username, Email, Password | Account is created with credentials |
+| **App authenticates user is logged in** | VISIT PAGE | Account is Verified as Logged In |
 | **App takes Flavor creation input and displays a link to Flavor's page** | NAME | NAME(link) |
 | **Flavor page allows for navigation to its own Treats page** | NAME | NAME(link) - > LIST OF TREATS |
 | **Flavor page allows for treat creation and input** | TREAT INFORMATION | NAME(link) -> LIST OF TREATS - > TREAT PAGE|
+| **App compares logged in user to created item's user** | Try to visit EDIT/DELETE for an item | Account is Verified as Logged In and compared to original user |
 
 
 ## Setup/Installation Requirements

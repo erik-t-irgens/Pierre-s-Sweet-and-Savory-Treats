@@ -1,0 +1,52 @@
+@{
+    Layout = "_Layout";
+}
+
+@model PierresSweets.Models.Treat
+
+<div class="card-header">
+    <h4>Edit this treat: @Html.DisplayFor(model => model.Name)</h4>
+</div>
+<div class="card-body">
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(model => model.TreatId)
+
+    @Html.LabelFor(model => model.Name)
+        @Html.TextBoxFor(model => model.Name)
+
+        @Html.LabelFor(model => model.Description)
+        @Html.TextBoxFor(model => model.Description)
+
+        @Html.LabelFor(model => model.Ingredients)
+        @Html.TextBoxFor(model => model.Ingredients)
+
+        @Html.LabelFor(model => model.Rating)
+        <!-- might need id of rating? -->
+        <select  name="Rating">
+            <!-- need name=rating? -->
+                <option>Select Rating</option> 
+                <!-- 1 star -->
+                <option value="1">&#127775;</option> 
+                <!-- 2 star -->
+                <option value="2">&#127775; &#127775; </option> 
+                <!-- 3 star-->
+                <option value="3">&#127775; &#127775; &#127775; </option> 
+                <!-- 4 star -->
+                <option value="4">&#127775; &#127775; &#127775; &#127775; </option> 
+                <!-- 5 star-->
+                <option value="5">&#127775; &#127775; &#127775; &#127775; &#127775;</option> 
+        </select>
+
+        
+
+        @Html.Label("Select flavor")
+        @Html.DropDownList("FlavorId")
+
+        <input type="submit" value="Save" />
+    }
+</div>
+<div class="card-footer">
+    @Html.ActionLink("Back to List", "Index")
+    <a class="btn btn-outline-info" href="/">Home</a>  
+</div>

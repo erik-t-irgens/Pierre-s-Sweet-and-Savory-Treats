@@ -1,0 +1,33 @@
+@{
+  Layout = "_Layout";
+}
+
+@using PierresSweets.Models;
+@using System.Security.Claims;
+@model List<PierresSweets.Models.Flavor>;
+
+<div class="card-header">
+    <h2>Here is a list of flavors, @User.Identity.Name</h2>
+</div>
+
+@if (Model.Any())
+{
+    <div class="card-body">
+        <ul>
+        @foreach (Flavor flavor in Model)
+        {
+            <li>@Html.ActionLink($"{flavor.Name}", "Details", new { id = flavor.FlavorId})</li>
+        }
+        </ul>
+    </div>
+} 
+else
+{
+    <div class="card-body">
+        <h3>No flavors have been added yet!</h3>
+    </div>
+}
+<div class="card-footer">
+    <p>@Html.ActionLink("Add new Flavor", "Create")</p>
+    <a class="btn btn-outline-info" href="/">Home</a>  
+</div>

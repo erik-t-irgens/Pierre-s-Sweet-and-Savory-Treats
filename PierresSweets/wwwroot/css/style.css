@@ -1,1 +1,14 @@
 
+body {
+    text-align: center;
+    color: white;
+}
+
+.card-header {
+    color: lightsalmon !important;
+
+}
+
+.btn {
+    box-shadow: 1px 1px 1px black !important;
+}

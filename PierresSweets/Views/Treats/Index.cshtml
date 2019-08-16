@@ -1,0 +1,35 @@
+@{
+  Layout = "_Layout";
+}
+
+@using PierresSweets.Models;
+@using System.Security.Claims;
+@model List<PierresSweets.Models.Treat>;
+
+<div class="card-header">
+    <h2>Here is a list of your treats, @User.Identity.Name</h2>
+</div>
+
+
+@if (Model.Any())
+{
+    <div class="card-body">
+        <ul>
+        @foreach (Treat treat in Model)
+        {
+            <li>@Html.ActionLink($"{treat.Name}", "Details", new { id = treat.TreatId})</li>
+        }
+        </ul>
+    </div>
+} 
+else
+{
+    <div class="card-body">
+        <h3>No treats have been added yet!</h3>
+    </div>
+}
+
+<div class="card-footer">
+<p>@Html.ActionLink("Add new Treat", "Create")</p>
+<a class="btn btn-outline-info" href="/">Home</a>  
+</div>

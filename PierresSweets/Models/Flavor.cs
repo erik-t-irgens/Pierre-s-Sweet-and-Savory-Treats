@@ -10,6 +10,9 @@ namespace PierresSweets.Models
         [StringLength(50)]
         public string Name { get; set; }
 
+        [StringLength(200)]
+        public string Description { get; set; }
+
         public ICollection<FlavorTreat> Treats { get; }
         public virtual ApplicationUser User { get; set; }
 

@@ -1,8 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using PierresSweets.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace PierresSweets
 {
@@ -12,39 +15,53 @@ namespace PierresSweets
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
-                .AddEnvironmentVariables();
+                .AddJsonFile("appsettings.json");
             Configuration = builder.Build();
         }
-
-        public IConfigurationRoot Configuration { get; }
-
+        public IConfigurationRoot Configuration { get; set; }
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-        }
 
+            services.AddEntityFrameworkMySql()
+                .AddDbContext<PierresSweetsContext>(options => options
+                .UseMySql(Configuration["ConnectionStrings:DefaultConnection"]));
+
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<PierresSweetsContext>()
+                .AddDefaultTokenProviders()
+                .AddErrorDescriber<CustomIdentityErrorDescriber>();
+            // Remove ErrorDescriber if it isn't needed or doesn't work.
+
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequireDigit = false;
+                options.Password.RequiredLength = 0;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequiredUniqueChars = 0;
+            });
+        }
         public void Configure(IApplicationBuilder app)
         {
+            // THIS LINE MAKES IT SO WE CAN USE STATIC FILES, SUCH AS STYLES.CSS
+            app.UseStaticFiles();
             app.UseDeveloperExceptionPage();
-
+            app.UseAuthentication();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                name: "default",
-                template: "{controller=Home}/{action=Index}/{id?}");
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
             });
 
-            app.UseStaticFiles();
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("Oops! Something went wrong...");
+                await context.Response.WriteAsync("something went wrong!");
             });
 
-        }
-    }
 
-    public static class DBConfiguration
-    {
-        public static string ConnectionString = "server=localhost;user id=root;password=root;port=8889;database=CHANGEMETOYOURDATABASE";
+        }
     }
 }

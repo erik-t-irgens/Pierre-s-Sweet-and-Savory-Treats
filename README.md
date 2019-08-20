@@ -6,7 +6,7 @@
 
 ## Description
 
-This app is intended to serve as a utlity for Pierre's Sweet and Savory Treats to manage a list of flavors - through the addition of a flavor on a form page - and treats for each perspective flavor through a page dedicated to add treats for easy viewing and correlation of information.
+This app is intended to serve as a utlity for Pierre's Sweet and Savory Treats to manage a list of flavors - through the addition of a flavor on a form page - and treats for each perspective flavor through a page dedicated to add treats for easy viewing and correlation of information. It uses relational database structure, in which Falvors and Treats are in a many-to-many relationship, and uses user authentication to verify the correct user is viewing, editing, deleting, or creating items.
 
 ### Specs
 
